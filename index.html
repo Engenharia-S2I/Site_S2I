@@ -15,9 +15,8 @@
 
     /* Header */
     header { position: fixed; top: 0; left: 0; width: 100%; background-color: var(--white); box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); z-index: 1000; transition: all 0.3s ease; }
-    .header-content { display: flex; justify-content: space-between; align-items: center; padding: 18px 0; position: relative; }
-    .logo { font-size: 28px; font-weight: 700; color: var(--black); } 
-    .logo span { color: var(--yellow); }
+    .header-content { display: flex; justify-content: space-between; align-items: center; padding: 18px 0; }
+    .logo { font-size: 28px; font-weight: 700; color: var(--black); } .logo span { color: var(--yellow); }
     nav ul { display: flex; list-style: none; gap: 32px; }
     nav ul li a { color: var(--black); font-weight: 600; font-size: 15px; transition: color 0.3s ease; position: relative; }
     nav ul li a:hover { color: var(--yellow); }
@@ -25,14 +24,6 @@
     nav ul li a:hover::after { width: 100%; }
     .btn-quote { background-color: var(--yellow); color: var(--black); padding: 12px 24px; border-radius: 8px; font-weight: 700; font-size: 14px; transition: all 0.3s ease; box-shadow: 0 4px 8px rgba(255, 215, 0, 0.3); }
     .btn-quote:hover { transform: translateY(-2px); box-shadow: 0 6px 12px rgba(255, 215, 0, 0.4); }
-
-    /* Menu Hamburguer (só aparece no mobile) */
-    .menu-toggle { display: none; cursor: pointer; padding: 8px; z-index: 1001; }
-    .menu-toggle span { display: block; width: 28px; height: 3px; background: #000; margin: 5px 0; transition: 0.3s; border-radius: 2px; }
-    .menu-toggle.open span:nth-child(1) { transform: rotate(45deg) translate(8px, 8px); }
-    .menu-toggle.open span:nth-child(2) { opacity: 0; }
-    .menu-toggle.open span:nth-child(3) { transform: rotate(-45deg) translate(7px, -7px); }
-
     /* Hero */
     #hero { background: linear-gradient(135deg, var(--yellow) 0%, var(--yellow) 50%, var(--white) 50%, var(--white) 100%); color: var(--black); padding: 140px 0 80px; text-align: center; position: relative; overflow: hidden; }
     #hero::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at 30% 30%, rgba(255, 215, 0, 0.15) 0%, transparent 60%); z-index: 0; }
@@ -49,7 +40,6 @@
     .btn:hover { background-color: var(--yellow); color: var(--black); transform: translateY(-3px); box-shadow: 0 8px 20px rgba(255, 215, 0, 0.3); }
     .btn-secondary { background-color: transparent; color: var(--black); border: 2px solid var(--black); }
     .btn-secondary:hover { background-color: var(--black); color: var(--white); border-color: var(--black); }
-
     /* Sobre */
     #sobre { padding: 100px 0; background-color: var(--light-gray); }
     #sobre h2 { text-align: center; color: var(--black); font-size: 40px; font-weight: 700; margin-bottom: 24px; }
@@ -58,11 +48,14 @@
     .mvv-item { background-color: var(--white); padding: 32px; border-radius: 16px; text-align: center; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06); transition: transform 0.3s ease; }
     .mvv-item:hover { transform: translateY(-6px); }
     .mvv-item h3 { color: var(--yellow); font-size: 22px; margin-bottom: 16px; font-weight: 700; }
-
     /* Soluções */
     #solucoes { padding: 100px 0; background-color: var(--white); }
     #solucoes h2 { text-align: center; color: var(--black); font-size: 40px; font-weight: 700; margin-bottom: 56px; }
-    .solutions-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+    .solutions-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
     .solution-card {
       background-color: var(--light-gray);
       padding: 32px;
@@ -77,8 +70,16 @@
       box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
       border-color: var(--yellow);
     }
-    .solution-card h3 { color: var(--black); margin-bottom: 16px; font-weight: 700; font-size: 20px; }
-    .solution-card ul { list-style: none; padding-left: 0; }
+    .solution-card h3 {
+      color: var(--black);
+      margin-bottom: 16px;
+      font-weight: 700;
+      font-size: 20px;
+    }
+    .solution-card ul {
+      list-style: none;
+      padding-left: 0;
+    }
     .solution-card ul li {
       position: relative;
       padding-left: 18px;
@@ -91,30 +92,42 @@
       left: 0;
       color: var(--yellow);
     }
-
-    /* Últimos 3 cards centralizados */
-    .last-row-wrapper {
-      grid-column: 1 / -1;
-      display: flex;
-      justify-content: center;
-      gap: 32px;
-      margin-top: 32px;
-      flex-wrap: wrap;
-    }
-
-    /* Fabricantes, Contato, Footer, Botões flutuantes (igual antes) */
+    /* Fabricantes */
     #fabricantes { padding: 100px 0; background-color: var(--light-gray); }
     #fabricantes h2 { text-align: center; color: var(--black); font-size: 40px; font-weight: 700; margin-bottom: 56px; }
     .partners-list { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; }
     .partner { background-color: var(--white); padding: 32px; border-radius: 16px; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06); transition: all 0.3s ease; text-align: center; }
     .partner:hover { transform: translateY(-8px); box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12); }
-    .partner img { width: 100%; height: 140px; object-fit: contain; margin: 0 auto 24px; transition: filter 0.3s ease; }
+    .partner img {
+      width: 100%;
+      height: 140px;
+      object-fit: contain;
+      margin: 0 auto 24px;
+      filter: none !important;
+      transition: filter 0.3s ease;
+    }
     .partner:hover img { filter: brightness(1.1); }
     .partner h3 { color: var(--black); margin-bottom: 16px; font-weight: 700; font-size: 20px; }
-    .partner ul { list-style: none; text-align: left; font-size: 14px; color: #444; margin-top: 12px; padding-left: 4px; }
-    .partner ul li { position: relative; padding-left: 18px; margin: 6px 0; }
-    .partner ul li::before { content: "•"; position: absolute; left: 0; color: var(--yellow); }
-
+    .partner ul {
+      list-style: none;
+      text-align: left;
+      font-size: 14px;
+      color: #444;
+      margin-top: 12px;
+      padding-left: 4px;
+    }
+    .partner ul li {
+      position: relative;
+      padding-left: 18px;
+      margin: 6px 0;
+    }
+    .partner ul li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--yellow);
+    }
+    /* Contato */
     #contato { padding: 100px 0; background-color: var(--white); }
     #contato h2 { text-align: center; color: var(--black); font-size: 40px; font-weight: 700; margin-bottom: 56px; }
     .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: stretch; }
@@ -122,10 +135,21 @@
     .contact-info h3 { color: var(--yellow); margin-bottom: 24px; font-size: 22px; font-weight: 700; }
     .contact-info p { margin-bottom: 16px; font-size: 16px; display: flex; align-items: center; gap: 12px; }
     .contact-info p strong { color: var(--black); min-width: 80px; }
-    .map-container { margin-top: 32px; position: relative; border-radius: 12px; overflow: hidden; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1); height: 420px; }
-    .map-container img { width: 100%; height: 100%; object-fit: cover; }
+    .map-container {
+      margin-top: 32px;
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+      height: 420px;
+    }
+    .map-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
     .map-marker { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 32px; color: var(--yellow); text-shadow: 0 0 8px rgba(0, 0, 0, 0.5); animation: pulse 2s infinite; }
-    @keyframes pulse { 0%,100% { transform: translate(-50%, -50%) scale(1); } 50% { transform: translate(-50%, -50%) scale(1.3); } }
+    @keyframes pulse { 0% { transform: translate(-50%, -50%) scale(1); } 50% { transform: translate(-50%, -50%) scale(1.2); } 100% { transform: translate(-50%, -50%) scale(1); } }
     .contact-form { background-color: var(--light-gray); padding: 32px; border-radius: 16px; }
     .contact-form label { display: block; margin-bottom: 8px; color: var(--black); font-weight: 600; font-size: 14px; }
     .contact-form input, .contact-form textarea { width: 100%; padding: 14px; margin-bottom: 20px; border: 1px solid rgba(0, 0, 0, 0.1); border-radius: 12px; font-family: inherit; font-size: 15px; transition: border-color 0.3s ease; }
@@ -133,82 +157,83 @@
     .contact-form button { background-color: var(--yellow); color: var(--black); padding: 16px 32px; border: none; border-radius: 12px; cursor: pointer; width: 100%; font-weight: 700; font-size: 16px; transition: all 0.3s ease; }
     .contact-form button:hover { background-color: #e6c200; transform: translateY(-2px); }
     #response-message { display: none; text-align: center; padding: 16px; border-radius: 12px; margin-top: 20px; font-weight: 600; }
-
+    /* Footer */
     footer { background-color: var(--black); color: var(--white); padding: 48px 0 24px; text-align: center; }
     .footer-nav ul { display: flex; justify-content: center; list-style: none; margin-bottom: 24px; flex-wrap: wrap; gap: 24px; }
     .footer-nav ul li a { color: rgba(255, 255, 255, 0.8); font-size: 14px; transition: color 0.3s ease; }
     .footer-nav ul li a:hover { color: var(--yellow); }
-
-    .floating-buttons { position: fixed; bottom: 24px; right: 24px; display: flex; flex-direction: column; gap: 12px; z-index: 999; }
-    .floating-btn { width: 56px; height: 56px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); transition: all 0.3s ease; color: white; }
-    .floating-btn:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); }
+    /* BOTÕES FLUTUANTES - WhatsApp + LinkedIn */
+    .floating-buttons {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      z-index: 999;
+    }
+    .floating-btn {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      transition: all 0.3s ease;
+      color: white;
+    }
+    .floating-btn:hover {
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
     .floating-btn.whatsapp { background-color: #25D366; }
     .floating-btn.linkedin { background-color: #0A66C2; }
     .floating-btn svg { width: 28px; height: 28px; }
-
-    /* RESPONSIVIDADE PERFEITA */
+    /* Responsividade Melhorada para Mobile (sem alterar desktop) */
     @media (max-width: 992px) {
-      .stats, .partners-list { grid-template-columns: repeat(2, 1fr); }
+      .header-content { flex-direction: row; justify-content: space-between; align-items: center; }
+      .menu-toggle { display: block; background: none; border: none; font-size: 24px; cursor: pointer; color: var(--black); z-index: 1001; }
+      nav { display: none; position: absolute; top: 100%; left: 0; width: 100%; background: var(--white); padding: 20px 0; box-shadow: 0 8px 16px rgba(0,0,0,0.1); }
+      nav.active { display: block; }
+      nav ul { flex-direction: column; gap: 20px; text-align: center; }
+      .btn-quote { margin-top: 20px; display: block; text-align: center; }
+      .stats { grid-template-columns: repeat(2, 1fr); }
+      .partners-list { grid-template-columns: repeat(2, 1fr); }
       .contact-grid { grid-template-columns: 1fr; }
       .solutions-grid { grid-template-columns: repeat(2, 1fr); }
-    }
-
-    @media (max-width: 680px) {
-      /* Menu hamburguer ativo */
-      .menu-toggle { display: block; }
-      nav { 
-        position: absolute; 
-        top: 100%; 
-        left: 0; 
-        width: 100%; 
-        background: white; 
-        box-shadow: 0 4px 12px rgba(0,0,0,0.1); 
-        max-height: 0; 
-        overflow: hidden; 
-        transition: max-height 0.4s ease, padding 0.4s ease;
-      }
-      nav.open { max-height: 500px; padding: 24px 0; }
-      nav ul { flex-direction: column; gap: 24px; align-items: center; }
-      
-      .header-content { padding: 14px 0; }
-      .logo { font-size: 26px; }
-      .btn-quote { padding: 10px 18px; font-size: 13px; }
-
-      #hero h1 { font-size: 38px; }
+      #hero h1 { font-size: 42px; }
       #hero p { font-size: 18px; }
-      .stats { grid-template-columns: 1fr 1fr; gap: 16px; }
-      .stat-box h3 { font-size: 36px; }
-      .about-mvv, .partners-list { grid-template-columns: 1fr; }
-      .solutions-grid { display: block; }
-      .solution-card { max-width: 380px; margin: 0 auto 28px; padding: 28px 24px; }
-      .last-row-wrapper { 
-        display: flex !important; 
-        flex-direction: column; 
-        align-items: center; 
-        gap: 28px; 
-        margin-top: 28px; 
-      }
-      .last-row-wrapper .solution-card { width: 100%; max-width: 380px; }
-      .floating-btn { width: 52px; height: 52px; }
-      .floating-btn svg { width: 26px; height: 26px; }
+      section { padding: 80px 0; }
     }
-
-    @media (max-width: 480px) {
-      #hero h1 { font-size: 32px; }
+    @media (max-width: 600px) {
+      .container { padding: 0 15px; }
+      .header-content { padding: 12px 0; }
+      nav ul { gap: 16px; }
+      .stats { grid-template-columns: 1fr; }
+      .partners-list { grid-template-columns: 1fr; }
+      .solutions-grid { grid-template-columns: 1fr; }
       #hero { padding: 120px 0 60px; }
-      .container { padding: 0 16px; }
-      .stat-box h3 { font-size: 32px; }
-      .stats .stat-box { padding: 20px 12px; }
+      #hero h1 { font-size: 36px; }
+      #hero p { font-size: 16px; }
+      .stat-box { padding: 24px; }
+      .mvv-item { padding: 28px; }
+      .solution-card { padding: 28px; }
+      .partner { padding: 28px; }
+      .contact-info, .contact-form { padding: 28px; }
+      .map-container { height: 300px; }
       .floating-buttons { bottom: 16px; right: 16px; }
+      .floating-btn { width: 50px; height: 50px; }
+      .floating-btn svg { width: 24px; height: 24px; }
     }
   </style>
 </head>
 <body>
-
   <!-- HEADER -->
   <header>
     <div class="container header-content">
       <div class="logo">S<span>2</span>i</div>
+      <button class="menu-toggle" aria-label="Toggle menu">☰</button>
       <nav>
         <ul>
           <li><a href="#hero">Home</a></li>
@@ -219,19 +244,9 @@
         </ul>
       </nav>
       <a href="#contato" class="btn-quote">Solicitar Orçamento</a>
-
-      <!-- MENU HAMBURGUER (só aparece no mobile) -->
-      <div class="menu-toggle" onclick="this.classList.toggle('open'); document.querySelector('nav').classList.toggle('open')">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
     </div>
   </header>
-
-  <!-- Todo o resto do site (hero, sobre, soluções, etc.) exatamente igual -->
-  <!-- [O conteúdo das seções permanece 100% igual ao que você já tinha] -->
-
+  <!-- HERO -->
   <section id="hero">
     <div class="container">
       <h1>Soluções em Automação Industrial</h1>
@@ -248,59 +263,240 @@
       </div>
     </div>
   </section>
-
+  <!-- SOBRE -->
   <section id="sobre">
     <div class="container">
       <h2>Quem Somos</h2>
       <p class="about-description">A S2i é uma empresa especializada em distribuição industrial, oferecendo soluções em automação para diversos setores com excelência técnica e atendimento personalizado.</p>
       <div class="about-mvv">
-        <div class="mvv-item"><h3>Missão</h3><p>Fornecer soluções inovadoras em automação industrial.</p></div>
-        <div class="mvv-item"><h3>Visão</h3><p>Ser referência em distribuição técnica no Brasil.</p></div>
-        <div class="mvv-item"><h3>Valores</h3><p>Integridade, Inovação, Compromisso com o Cliente e Sustentabilidade.</p></div>
+        <div class="mvv-item">
+          <h3>Missão</h3>
+          <p>Tornar a indústria brasileira forte e competitiva.
+ Acreditamos que um país forte e um povo forte nascem da dignidade de ter uma indústria pujante, inovadora e geradora de oportunidades.
+ Conectamos tecnologia, eficiência e desenvolvimento para impulsionar uma indústria mais segura, sustentável e produtiva.</p>
+        </div>
+        <div class="mvv-item">
+          <h3>Visão</h3>
+          <p>Ser reconhecida como a principal distribuidora técnica do Centro-Oeste, referência nacional em automação e consultoria industrial, promovendo a evolução tecnológica das empresas e o fortalecimento da indústria brasileira.</p>
+        </div>
+        <div class="mvv-item">
+          <h3>Valores</h3>
+          <p>Entrega Memorável - Qualidade, Agilidade, Presença Plena, Detalhes,
+Cliente no Centro - Escuta Ativa, Perguntas, Priorização,
+Parceria e Confiança - Relações Solidas, Respeito e Compromisso,
+Propósito e Responsabilidade - Pessoas, Negócios e Industria,
+Ética e Transparência - Coerência, Respeito e Integridade,
+Inovação e Aprendizado Contínuo - Evoluir sempre, antecipando tendências e aplicando tecnologia com propósito.</p>
+        </div>
       </div>
-      <h2 style="text-align: center; margin: 64px 0 32px; font-size: 36px;">Pilares</h2>
+      <h2 style="text-align: center; margin: 64px 0 32px; font-size: 36px; color: var(--black);">Pilares</h2>
       <div class="about-mvv">
-        <div class="mvv-item"><h3>Produtos</h3><p>Distribuímos componentes de alta qualidade das melhores marcas globais, garantindo confiabilidade, desempenho e inovação em cada solução entregue.</p></div>
-        <div class="mvv-item"><h3>Projetos</h3><p>Desenvolvemos projetos personalizados com suporte técnico especializado, desde a especificação até a implementação, alinhados às necessidades do cliente.</p></div>
-        <div class="mvv-item"><h3>Estoque</h3><p>Mais de 1.000 itens em estoque para pronta-entrega, com logística eficiente e cobertura em 7 estados, reduzindo tempo de parada das indústrias.</p></div>
+        <div class="mvv-item">
+          <h3>Produtos</h3>
+          <p>Distribuímos componentes de alta qualidade das melhores marcas globais, garantindo confiabilidade, desempenho e inovação em cada solução entregue.</p>
+        </div>
+        <div class="mvv-item">
+          <h3>Projetos</h3>
+          <p>Desenvolvemos projetos personalizados com suporte técnico especializado, desde a especificação até a implementação, alinhados às necessidades do cliente.</p>
+        </div>
+        <div class="mvv-item">
+          <h3>Estoque</h3>
+          <p>Mais de 1.000 itens em estoque para pronta-entrega, com logística eficiente e cobertura em 7 estados, reduzindo tempo de parada das indústrias.</p>
+        </div>
       </div>
     </div>
   </section>
-
+  <!-- SOLUÇÕES -->
   <section id="solucoes">
     <div class="container">
       <h2>Nossas Soluções</h2>
       <div class="solutions-grid">
-        <div class="solution-card"><h3>Conexões Elétricas</h3><ul><li>Conectores e emendas</li><li>Bornes para trilho DIN</li><li>Bornes de alta corrente</li><li>Conectores plugáveis</li><li>Conectores PCI</li></ul></div>
-        <div class="solution-card"><h3>Interfaces Eletrônicas</h3><ul><li>Fontes de alimentação</li><li>Disjuntor eletrônico</li><li>Relés e acopladores óticos</li><li>Transdutores de sinal e amplificadores de isolamento</li><li>Transformadores de corrente e tensão</li><li>Módulos de interface</li><li>Fiação de sistema</li></ul></div>
-        <div class="solution-card"><h3>Conectividade</h3><ul><li>Conexões M12/M8</li><li>Conexão CAGE CLAMP</li><li>Bornes modulares</li><li>Automação descentralizada</li></ul></div>
-        <div class="solution-card"><h3>Sensores</h3><ul><li>Indutivo</li><li>Capacitivo</li><li>Fotoelétrico</li><li>Instrumentação</li><li>Radar</li><li>Ultrassônico</li></ul></div>
-        <div class="solution-card"><h3>Smart Sensores</h3><ul><li>Distância</li><li>Pressão</li><li>Temperatura</li><li>Vibração</li></ul></div>
-        <div class="solution-card"><h3>Indicação e Iluminação</h3><ul><li>Iluminação industrial</li><li>Indicadores LED</li><li>Iluminação para visão</li><li>Sinais luminosos</li></ul></div>
-        <div class="solution-card"><h3>Automação</h3><ul><li>PLCs controladores</li><li>Dispositivos edge</li><li>Sistemas de I/O</li><li>Softwares</li><li>Touch panels</li><li>Switches industriais</li><li>Caixa de sensores/atuadores</li></ul></div>
-        <div class="solution-card"><h3>RFID</h3><ul><li>Leitores RFID</li><li>Tags RFID</li><li>Antenas RFID</li><li>Sistemas de rastreamento</li></ul></div>
-        <div class="solution-card"><h3>Sistema de Visão</h3><ul><li>Câmeras</li><li>Software de visão</li><li>Iluminação para visão</li><li>Lentes</li></ul></div>
-      </div>
-      <div class="last-row-wrapper">
-        <div class="solution-card"><h3>Wireless</h3><ul><li>Sensores wireless</li><li>Redes wireless industriais</li><li>Gateways wireless</li><li>Soluções de conectividade sem fio</li></ul></div>
-        <div class="solution-card"><h3>NR12</h3><ul><li>Chaves de segurança</li><li>Botões de emergência</li><li>Intertravamentos</li><li>Relés de segurança</li></ul></div>
-        <div class="solution-card"><h3>Segurança intrínseca</h3><ul><li>Cortinas de luz</li><li>Relés de segurança</li><li>Módulos de I/O de segurança</li><li>Sensores de segurança</li><li>Barreiras ópticas</li></ul></div>
+        <div class="solution-card">
+          <h3>Conexões Elétricas</h3>
+          <ul>
+            <li>Conectores e emendas</li>
+            <li>Bornes para trilho DIN</li>
+            <li>Bornes de alta corrente</li>
+            <li>Conectores plugáveis</li>
+            <li>Conectores PCI</li>
+          </ul>
+        </div>
+        <div class="solution-card">
+          <h3>Interfaces Eletrônicas</h3>
+          <ul>
+            <li>Fontes de alimentação</li>
+            <li>Disjuntor eletrônico</li>
+            <li>Relés e acopladores óticos</li>
+            <li>Transdutores de sinal e amplificadores de isolamento</li>
+            <li>Transformadores de corrente e tensão</li>
+            <li>Módulos de interface</li>
+            <li>Fiação de sistema</li>
+          </ul>
+        </div>
+        <div class="solution-card">
+          <h3>Conectividade</h3>
+          <ul>
+            <li>Conexões M12/M8</li>
+            <li>Conexão CAGE CLAMP</li>
+            <li>Bornes modulares</li>
+            <li>Automação descentralizada</li>
+          </ul>
+        </div>
+        <div class="solution-card">
+          <h3>Sensores</h3>
+          <ul>
+            <li>Indutivo</li>
+            <li>Capacitivo</li>
+            <li>Fotoelétrico</li>
+            <li>Instrumentação</li>
+            <li>Radar</li>
+            <li>Ultrassônico</li>
+          </ul>
+        </div>
+        <div class="solution-card">
+          <h3>Smart Sensores</h3>
+          <ul>
+            <li>Distancia</li>
+            <li>Preção</li>
+            <li>Temperatura</li>
+            <li>vibração</li>
+          </ul>
+        </div>
+        <div class="solution-card">
+          <h3>Indicação e Iluminação</h3>
+          <ul>
+            <li>Iluminação industrial</li>
+            <li>Indicadores LED</li>
+            <li>Iluminação para visão</li>
+            <li>Sinais luminosos</li>
+          </ul>
+        </div>
+        <div class="solution-card">
+          <h3>Automação</h3>
+          <ul>
+            <li>PLCs controladores</li>
+            <li>Dispositivos edge</li>
+            <li>Sistemas de I/O</li>
+            <li>Softwares</li>
+            <li>Touch panels</li>
+            <li>Switches industriais</li>
+            <li>Caixa de sensores/atuadores</li>
+          </ul>
+        </div>
+        <div class="solution-card">
+          <h3>RFID</h3>
+          <ul>
+            <li>Leitores RFID</li>
+            <li>Tags RFID</li>
+            <li>Antenas RFID</li>
+            <li>Sistemas de rastreamento</li>
+          </ul>
+        </div>
+        <div class="solution-card">
+          <h3>Sistema de Visão</h3>
+          <ul>
+            <li>Câmeras</li>
+            <li>Software de visão</li>
+            <li>Iluminação para visão</li>
+            <li>Lentes</li>
+          </ul>
+        </div>
+        <div class="solution-card">
+          <h3>Wireless</h3>
+          <ul>
+            <li>Sensores wireless</li>
+            <li>Redes wireless industriais</li>
+            <li>Gateways wireless</li>
+            <li>Soluções de conectividade sem fio</li>
+          </ul>
+        </div>
+        <div class="solution-card">
+          <h3>NR12</h3>
+          <ul>
+            <li>Chaves de segurança</li>
+            <li>Botões de emergência</li>
+            <li>Intertravamentos</li>
+            <li>Relés de segurança</li>
+          </ul>
+        </div>
+        <div class="solution-card">
+          <h3>Segurança intrínseca</h3>
+          <ul>
+            <li>Cortinas de luz</li>
+            <li>Relés de segurança</li>
+            <li>Módulos de I/O de segurança</li>
+            <li>Sensores de segurança</li>
+            <li>Barreiras ópticas</li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
-
+  <!-- FABRICANTES -->
   <section id="fabricantes">
     <div class="container">
       <h2>Fabricantes Parceiros</h2>
       <div class="partners-list">
-        <div class="partner"><img src="https://github.com/Engenharia-S2I/Site_S2I/blob/main/Logo%20Banner.png?raw=true" alt="Banner Engineering"><h3>Banner Engineering</h3><ul><li>Soluções em medição</li><li>Iluminação e indicação</li><li>Segurança de máquina</li><li>Sensores</li><li>Redes de sensores sem fio</li><li>Remote I/O</li><li>Tecnologia de Conectividade</li><li>Monitoring Solutions</li></ul></div>
-        <div class="partner"><img src="https://github.com/Engenharia-S2I/Site_S2I/blob/main/Logo%20Turck.jpg?raw=true" alt="Turck"><h3>Turck</h3><ul><li>Sensores</li><li>Identificação</li><li>Conectividade</li><li>Monitores e iluminação</li><li>Tecnologia em redes industriais</li></ul></div>
-        <div class="partner"><img src="https://github.com/Engenharia-S2I/Site_S2I/blob/main/Logo%20Pizzato.png?raw=true" alt="Pizzato"><h3>Pizzato</h3><ul><li>Interruptores de posição</li><li>Dispositivos de segurança</li><li>PLCs e módulos de segurança</li></ul></div>
-        <div class="partner"><img src="https://github.com/Engenharia-S2I/Site_S2I/blob/main/Logo%20Wago.png?raw=true" alt="Wago"><h3>Wago</h3><ul><li>Automação predial</li><li>Fabricação de luminárias</li><li>Geração e distribuição de energia</li></ul></div>
+        <div class="partner">
+          <img src="https://github.com/Engenharia-S2I/Site_S2I/blob/main/Logo%20Banner.png?raw=true" alt="Banner Engineering">
+          <h3>Banner Engineering</h3>
+          <ul>
+            <li>Soluções em medição</li>
+            <li>Iluminação e indicação</li>
+            <li>Segurança de maquina</li>
+            <li>Sensores</li>
+            <li>Redes de sensores sem fio</li>
+            <li>Remote I/O</li>
+            <li>Tecnologia de Conectividade</li>
+            <li>Monitoring Solutions</li>
+          </ul>
+        </div>
+        <div class="partner">
+          <img src="https://github.com/Engenharia-S2I/Site_S2I/blob/main/Logo%20Turck.jpg?raw=true" alt="Turck">
+          <h3>Turck</h3>
+          <ul>
+            <li>Sensores</li>
+            <li>Identificação</li>
+            <li>Conectividade</li>
+            <li>Monitores e iluminação</li>
+            <li>Tecnologia em redes industriais</li>
+            <li>Soluções de painéis de controle</li>
+            <li>Tecnologia de interfaçe</li>
+            <li>Segurança de máquina</li>
+            <li>Controladores industriais</li>
+            <li>Alimentação</li>
+            <li>Soluções CLOUD</li>
+          </ul>
+        </div>
+        <div class="partner">
+          <img src="https://github.com/Engenharia-S2I/Site_S2I/blob/main/Logo%20Pizzato.png?raw=true" alt="Pizzato">
+          <h3>Pizzato</h3>
+          <ul>
+            <li>Interruptores de posição</li>
+            <li>Dispositivos de segurança</li>
+            <li>PLCs e módulos de segurança</li>
+            <li>Interface homem-máquina</li>
+            <li>Dispositivos de elevação</li>
+            <li>Acessórios</li>
+          </ul>
+        </div>
+        <div class="partner">
+          <img src="https://github.com/Engenharia-S2I/Site_S2I/blob/main/Logo%20Wago.png?raw=true" alt="Wago">
+          <h3>Wago</h3>
+          <ul>
+            <li>Automação predial</li>
+            <li>Fabricação de luminarias</li>
+            <li>Geração e distribuição de energia</li>
+            <li>Iluminação publica</li>
+            <li>Indústria automotiva</li>
+            <li>Indústria de manufatura</li>
+            <li>Indústria de processos</li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
-
+  <!-- CONTATO -->
   <section id="contato">
     <div class="container">
       <h2>Entre em Contato</h2>
@@ -316,18 +512,23 @@
           </div>
         </div>
         <form id="contact-form" class="contact-form">
-          <label for="nome">Nome*</label><input type="text" id="nome" name="nome" required>
-          <label for="empresa">Empresa*</label><input type="text" id="empresa" name="empresa" required>
-          <label for="email">E-mail*</label><input type="email" id="email" name="email" required>
-          <label for="telefone">Telefone*</label><input type="tel" id="telefone" name="telefone" required>
-          <label for="mensagem">Mensagem*</label><textarea id="mensagem" name="mensagem" rows="5" required></textarea>
+          <label for="nome">Nome*</label>
+          <input type="text" id="nome" name="nome" required>
+          <label for="empresa">Empresa*</label>
+          <input type="text" id="empresa" name="empresa" required>
+          <label for="email">E-mail*</label>
+          <input type="email" id="email" name="email" required>
+          <label for="telefone">Telefone*</label>
+          <input type="tel" id="telefone" name="telefone" required>
+          <label for="mensagem">Mensagem*</label>
+          <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
           <button type="submit">Enviar Mensagem</button>
         </form>
       </div>
       <div id="response-message"></div>
     </div>
   </section>
-
+  <!-- FOOTER -->
   <footer>
     <div class="container">
       <nav class="footer-nav">
@@ -342,26 +543,30 @@
       <p>© 2025 S2i - Distribuição Industrial. Todos os direitos reservados.</p>
     </div>
   </footer>
-
+  <!-- BOTÕES FLUTUANTES: WhatsApp + LinkedIn -->
   <div class="floating-buttons">
-    <a href="https://wa.me/556231420595?text=Olá! Vim pelo site e gostaria de um orçamento." class="floating-btn whatsapp" target="_blank">
+    <a href="https://wa.me/55623142-0595?text=Olá!%20Vim%20pelo%20site%20e%20gostaria%20de%20um%20orçamento."
+       class="floating-btn whatsapp" target="_blank" aria-label="Fale pelo WhatsApp">
       <svg viewBox="0 0 24 24"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.297-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 5.44h-.004c-.673 0-1.34-.164-1.967-.483l-.141-.085c-1.728-.972-2.878-2.435-3.316-4.156-.426-1.672-.258-3.48.428-4.984l.002-.002c.236-.665.68-1.248 1.272-1.658.592-.41 1.287-.62 1.994-.62h.002c.672 0 1.338.163 1.964.482l.141.085c1.728.972 2.878 2.435 3.316 4.156.426 1.672.258 3.48-.428 4.984l-.002.002c-.236.665-.68 1.248-1.272 1.658-.592.41-1.287.62-1.994.62zM12.002 0C5.374 0 .002 5.372.002 12c0 2.109.546 4.176 1.58 5.996L.002 24l6.17-1.576c1.794 1.028 3.854 1.576 5.83 1.576 6.628 0 12-5.372 12-12 0-6.628-5.372-12-12-12z"/></svg>
     </a>
-    <a href="https://br.linkedin.com/company/s2i-distribui%C3%A7%C3%A3o-industrial" class="floating-btn linkedin" target="_blank">
+    <a href="https://br.linkedin.com/company/s2i-distribui%C3%A7%C3%A3o-industrial"
+       class="floating-btn linkedin" target="_blank" aria-label="Acesse nosso LinkedIn">
       <svg viewBox="0 0 24 24"><path fill="currentColor" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
     </a>
   </div>
-
+  <!-- SCRIPT DO FORMULÁRIO (Google Sheets) -->
   <script>
     const form = document.getElementById('contact-form');
     const msg = document.getElementById('response-message');
     const btn = form.querySelector('button');
     const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyU7n8nWBBwxXpE0F_ncsHeRHmLJLnyqB4knGozzy8LNh43xp9fnBbEYx7Z0sJ2DP6R/exec';
+ 
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
       btn.disabled = true;
       btn.textContent = 'Enviando...';
       msg.style.display = 'none';
+   
       const data = {
         nome: form.nome.value.trim(),
         empresa: form.empresa.value.trim(),
@@ -369,8 +574,14 @@
         telefone: form.telefone.value.trim(),
         mensagem: form.mensagem.value.trim()
       };
+   
       try {
-        await fetch(SCRIPT_URL, { method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) });
+        await fetch(SCRIPT_URL, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data)
+        });
         setTimeout(() => {
           msg.innerHTML = '<div style="background:#d4edda;color:#155724;padding:16px;border-radius:12px;">Mensagem enviada com sucesso!</div>';
           msg.style.display = 'block';
@@ -384,6 +595,15 @@
         btn.disabled = false;
         btn.textContent = 'Enviar Mensagem';
       }
+    });
+  </script>
+  <!-- Script para Menu Mobile -->
+  <script>
+    const toggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('nav');
+    toggle.addEventListener('click', () => {
+      nav.classList.toggle('active');
+      toggle.textContent = nav.classList.contains('active') ? '✕' : '☰';
     });
   </script>
 </body>
