@@ -11,9 +11,31 @@
     a { text-decoration: none; color: inherit; }
     .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
     :root { --yellow: #FFD700; --black: #000000; --white: #ffffff; --light-gray: #f8f8f8; }
+
+    /* ====================== ALTERAÇÃO MÍNIMA PARA CENTRALIZAR O FORMULÁRIO ====================== */
+    .contact-wrapper {
+      max-width: 800px;        /* tamanho proporcional e bonito */
+      margin: 0 auto;          /* centraliza horizontalmente */
+      text-align: center;      /* centraliza o título e o formulário */
+    }
+    .contact-wrapper .contact-form {
+      margin-top: 40px;
+      text-align: left;        /* mantém os campos alinhados à esquerda (padrão) */
+    }
+    /* ====================================================================================== */
+
     header { position: fixed; top: 0; left: 0; width: 100%; background-color: var(--white); box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); z-index: 1000; transition: all 0.3s ease; }
+    /* ... todo o resto do seu CSS permanece exatamente igual ... */
     .header-content { display: flex; justify-content: space-between; align-items: center; padding: 18px 0; }
-    .logo { font-size: 28px; font-weight: 700; color: var(--black); } .logo span { color: var(--yellow); }
+    
+    /* LOGO ATUALIZADA */
+    .logo img { 
+      height: 100px; 
+      width: auto; 
+      display: block; 
+      transition: all 0.3s ease;
+    }
+    
     nav ul { display: flex; list-style: none; gap: 32px; }
     nav ul li a { color: var(--black); font-weight: 600; font-size: 15px; transition: color 0.3s ease; position: relative; }
     nav ul li a:hover { color: var(--yellow); }
@@ -105,6 +127,7 @@
       #hero h1 { font-size: 42px; }
       #hero p { font-size: 18px; }
       section { padding: 80px 0; }
+      .logo img { height: 100px; }
     }
     @media (max-width: 600px) {
       .container { padding: 0 15px; }
@@ -125,13 +148,19 @@
       .floating-buttons { bottom: 16px; right: 16px; }
       .floating-btn { width: 50px; height: 50px; }
       .floating-btn svg { width: 24px; height: 24px; }
+      .logo img { height: 80px; }
     }
   </style>
 </head>
 <body>
   <header>
     <div class="container header-content">
-      <div class="logo">S<span>2</span>i</div>
+      <!-- LOGO ATUALIZADA: apenas a imagem, sem texto -->
+      <div class="logo">
+        <a href="#hero">
+          <img src="https://github.com/Engenharia-S2I/Site_S2I/blob/main/s2i_distribuio_industrial_logo.jpg?raw=true" alt="S2i Distribuição Industrial">
+        </a>
+      </div>
       <button class="menu-toggle" aria-label="Toggle menu">Menu</button>
       <nav>
         <ul>
@@ -153,7 +182,7 @@
       <div class="stats">
         <div class="stat-box"><h3>7</h3><p>Estados</p></div>
         <div class="stat-box"><h3>4+</h3><p>Marcas</p></div>
-        <div class="stat-box"><h3>1000+</h3><p>Estoque</p></div>
+        <div class="stat-box"><h3>2000+</h3><p>Estoque</p></div>
         <div class="stat-box"><h3>24/7</h3><p>Suporte</p></div>
       </div>
       <div class="actions">
@@ -178,7 +207,7 @@
         </div>
         <div class="mvv-item">
           <h3>Valores</h3>
-          <p>Entrega Memorável - Qualidade, Agilidade, Presença Plena, Detalhes,<br>Cliente no Centro - Escuta Ativa, Perguntas, Priorização,<br>Parceria e Confiança - Relações Solidas, Respeito e Compromisso,<br>Propósito e Responsabilidade - Pessoas, Negócios e Industria,<br>Ética e Transparência - Coerência, Respeito e Integridade,<br>Inovação e Aprendizado Contínuo - Evoluir sempre, antecipando tendências e aplicando tecnologia com propósito.</p>
+          <p>Entrega Memorável<br>Cliente no Centro<br>Parceria e Confiança<br>Propósito e Responsabilidade<br>Ética e Transparência<br>Inovação e Aprendizado Contínuo.</p>
         </div>
       </div>
       <h2 style="text-align: center; margin: 64px 0 32px; font-size: 36px; color: var(--black);">Pilares</h2>
@@ -231,7 +260,7 @@
         <div class="partner">
           <img src="https://github.com/Engenharia-S2I/Site_S2I/blob/main/Logo%20Turck.jpg?raw=true" alt="Turck">
           <h3>Turck</h3>
-          <ul><li>Sensores</li><li>Identificação</li><li>Conectividade</li><li>Monitores e iluminação</li><li>Tecnologia em redes industriais</li><li>Soluções de painéis de controle</li><li>Tecnologia de interfaçe</li><li>Segurança de máquina</li><li>Controladores industriais</li><li>Alimentação</li><li>Soluções CLOUD</li></ul>
+          <ul><li>Sensores</li><li>Identificação</li><li>Conectividade</li><li>Indicações luminosas </li><li>Tecnologia em redes industriais</li><li>Soluções de painéis de controle</li><li>Tecnologia de interfaçe</li><li>Segurança de máquina</li><li>Controladores industriais</li><li>Alimentação</li><li>Soluções CLOUD</li></ul>
         </div>
         <div class="partner">
           <img src="https://github.com/Engenharia-S2I/Site_S2I/blob/main/Logo%20Pizzato.png?raw=true" alt="Pizzato">
@@ -241,26 +270,17 @@
         <div class="partner">
           <img src="https://github.com/Engenharia-S2I/Site_S2I/blob/main/Logo%20Wago.png?raw=true" alt="Wago">
           <h3>Wago</h3>
-          <ul><li>Automação predial</li><li>Fabricação de luminarias</li><li>Geração e distribuição de energia</li><li>Iluminação publica</li><li>Indústria automotiva</li><li>Indústria de manufatura</li><li>Indústria de processos</li></ul>
+          <ul><li>Bornes para trilho DIN</li><li>Fontes de alimentação</li><li>Disjuntores eletrônicos</li><li>Relés e acopladores</li><li>Automação</li><li>Switches industriais</li><li>Touch panels</li><li>Impressoras de identificação</li></ul>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="contato">
+    <section id="contato">
     <div class="container">
-      <h2>Entre em Contato</h2>
-      <div class="contact-grid">
-        <div class="contact-info">
-          <h3>Informações</h3>
-          <p><strong>Endereço:</strong> Rua 1, 928 Setor Oeste, Goiânia - Goiás Salas 602/603</p>
-          <p><strong>Telefone:</strong> (62) 3142-0595</p>
-          <p><strong>E-mail:</strong> contato@s2i.com.br</p>
-          <div class="map-container">
-            <img src="https://github.com/Engenharia-S2I/Site_S2I/blob/main/Mapa%20de%20Atua%C3%A7%C3%A3o%20S2I.png?raw=true" alt="Mapa de Atuação S2i" loading="lazy">
-            <div class="map-marker"></div>
-          </div>
-        </div>
+      <!-- BLOCO CENTRALIZADO E COM TAMANHO PROPORCIONAL -->
+      <div class="contact-wrapper">
+        <h2>Solicite um orçamento ou visita técnica</h2>
         <form id="contact-form" class="contact-form">
           <label for="nome">Nome*</label>
           <input type="text" id="nome" name="nome" required>
@@ -275,8 +295,9 @@
           <button type="submit">Enviar Mensagem</button>
         </form>
       </div>
-      <div id="response-message"></div>
+      <!-- FIM DO BLOCO CENTRALIZADO -->
     </div>
+    <div id="response-message"></div>
   </section>
 
   <footer>
