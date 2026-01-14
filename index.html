@@ -76,7 +76,36 @@
     .solution-card ul li::before { content: "•"; position: absolute; left: 0; color: var(--yellow); }
     #fabricantes { padding: 100px 0; background-color: var(--light-gray); }
     #fabricantes h2 { text-align: center; color: var(--black); font-size: 40px; font-weight: 700; margin-bottom: 56px; }
-    .partners-list { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; }
+    .partners-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  justify-content: center;          /* centraliza tudo horizontalmente */
+  padding: 20px 0;
+}
+
+.partner {
+  flex: 0 0 280px;                  /* largura fixa/base desejada - ajuste se necessário */
+  max-width: 320px;
+  /* o resto do estilo do .partner continua igual */
+}
+
+/* Ajuste responsivo (já existe no seu código, só manter) */
+@media (max-width: 992px) {
+  .partners-list {
+    justify-content: center;
+  }
+  .partner {
+    flex: 0 0 260px;
+  }
+}
+
+@media (max-width: 600px) {
+  .partner {
+    flex: 0 0 100%;
+    max-width: 360px;
+  }
+}
     .partner { background-color: var(--white); padding: 32px; border-radius: 16px; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06); transition: all 0.3s ease; text-align: center; }
     .partner:hover { transform: translateY(-8px); box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12); }
     .partner img { width: 100%; height: 140px; object-fit: contain; margin: 0 auto 24px; filter: none !important; transition: filter 0.3s ease; }
@@ -153,8 +182,6 @@
   </style>
 </head>
 <body>
-  <script type="text/javascript" async src="https://d335luupugsy2.cloudfront.net/js/loader-scripts/c6875319-ee5e-42e7-8d61-53cdfb0bb1be-loader.js" ></script>
-
   <header>
     <div class="container header-content">
       <!-- LOGO ATUALIZADA: apenas a imagem, sem texto -->
@@ -183,7 +210,7 @@
       <p>Distribuição técnica especializada com as principais marcas globais.</p>
       <div class="stats">
         <div class="stat-box"><h3>7</h3><p>Estados</p></div>
-        <div class="stat-box"><h3>4+</h3><p>Marcas</p></div>
+        <div class="stat-box"><h3>5+</h3><p>Marcas</p></div>
         <div class="stat-box"><h3>2000+</h3><p>Estoque</p></div>
         <div class="stat-box"><h3>24/7</h3><p>Suporte</p></div>
       </div>
@@ -224,7 +251,7 @@
         </div>
         <div class="mvv-item">
           <h3>Estoque</h3>
-          <p>Mais de 2.000 itens em estoque para pronta-entrega, com logística eficiente e cobertura em 7 estados, reduzindo tempo de parada das indústrias.</p>
+          <p>Mais de 1.000 itens em estoque para pronta-entrega, com logística eficiente e cobertura em 7 estados, reduzindo tempo de parada das indústrias.</p>
         </div>
       </div>
     </div>
@@ -273,6 +300,11 @@
           <img src="https://github.com/Engenharia-S2I/Site_S2I/blob/main/Logo%20Wago.png?raw=true" alt="Wago">
           <h3>Wago</h3>
           <ul><li>Bornes para trilho DIN</li><li>Fontes de alimentação</li><li>Disjuntores eletrônicos</li><li>Relés e acopladores</li><li>Automação</li><li>Switches industriais</li><li>Touch panels</li><li>Impressoras de identificação</li></ul>
+        </div>
+        <div class="partner">
+          <img src="https://github.com/Engenharia-S2I/Site_S2I/blob/main/Logo%20IAD%20Shneider.jpg?raw=true" alt="Schneider">
+          <h3>Schneider</h3>
+          <ul><li>Sistemas para baixa tensão</li><li>Residencial e pequenas empresas</li><li>Automação e controle industrial</li><li>Automação e controle predial</li><li>Distribuição de MT e automação da rede elétrica</li><li>Energia crítica, resfriamento e racks</li><li>Soluções de eficiência energética</li></ul>
         </div>
       </div>
     </div>
@@ -381,6 +413,4 @@
     });
   </script>
 </body>
-  <script type="text/javascript" async src="https://d335luupugsy2.cloudfront.net/js/loader-scripts/c6875319-ee5e-42e7-8d61-53cdfb0bb1be-loader.js" ></script>
-
 </html>
